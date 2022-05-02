@@ -21,11 +21,7 @@ class BinarySearchTree {
   }
 
   root() {
-    // if (!this.rootNode) return null;
-    // else return this.rootNode;
     return this.rootNode;
-    // throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
   }
 
   add( data ) {
@@ -63,9 +59,17 @@ class BinarySearchTree {
   }
 
   find( data ) {
-    // return findWithin(this.rootNode, data);
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    let node = this.rootNode;
+    while (node !== null) {
+      if (node.data === data) {
+        return node;
+      } else if (data < node.data) {
+        node = node.left;
+      } else {
+        node = node.right;
+      }
+    }
+    return null;
   }
 
   remove( data ) {
@@ -112,6 +116,7 @@ class BinarySearchTree {
     if (!this.rootNode) return;
 
     let node = this.rootNode;
+    // let node = this.root();
     while (node.left) node = node.left;
   
     return node.data;
@@ -123,6 +128,7 @@ class BinarySearchTree {
     if (!this.rootNode) return;
 
     let node = this.rootNode;
+    // let node = this.root();
     while (node.right) node = node.right;
 
     return node.data;
@@ -130,8 +136,6 @@ class BinarySearchTree {
     // remove line with error and write your code here
   }
 }
-
-let testBST = new BinarySearchTree();
 
 module.exports = {
   BinarySearchTree
