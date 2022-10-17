@@ -12,20 +12,43 @@ const { NotImplementedError } = require('../extensions/index.js');
  * stack.pop(); // undefined
  *
  */
+// class Stack {
+//   push(/* element */) {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+
+//   pop() {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+
+//   peek() {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+// }
 class Stack {
-  push(/* element */) {
-    throw new NotImplementedError('Not implemented');
+  constructor () {
+    this.lifoArr = [];
+  }
+  push( elm ) {
+    // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+    this.lifoArr.push(elm);
   }
 
   pop() {
-    throw new NotImplementedError('Not implemented');
+    // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+    return this.lifoArr.pop();
   }
 
   peek() {
-    throw new NotImplementedError('Not implemented');
+    // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+    let elm;
+    return this.lifoArr[this.lifoArr.length - 1];
   }
 }
 
